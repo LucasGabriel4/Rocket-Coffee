@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+}
+
+
+body{
+    background-color: var(--backgrond);
+    
+
+}
+
+
+
+.show{
+    transition: all .5s;
+    height: 215px;
+}
+
+.hide{
+    height: 0;
+    transition: all .5s;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+
+
+
+
+.blur-desktop .blur-1{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  
+}
+
+.blur-desktop .blur-2{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+
+.blur-mobile{
+    position: absolute;
+    bottom: 0;
+     display: none; 
+}
+
+
+
+
+.header{
+    display: flex;
+    padding: 30px 2% 0 2%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1100px;
+    position: relative;
+  
+  
+}
+
+
+
+nav.menu-desktop ul li{
+    display: inline-block;
+    
+}
+
+
+
+nav.menu-desktop ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: .9rem;
+    
+}
+
+
+nav.menu-desktop li + li{
+  margin-left: 40px;
+
+}
+
+nav.menu-desktop  a::after{
+    content: '';
+    width: 0%;
+    display: block;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--button);
+    transition: all .5s;
+    
+}
+
+nav.menu-desktop  a:hover::after{
+    width: 100%;
+    
+}
+
+
+.button-header button{
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--button);
+    padding: 5px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+
+
+.banner{
+    text-align: center;
+     position: relative;
+     width: 100%;
+
+    
+}
+
+.banner .title-banner-1{
+    color: var(--text-color);
+    margin-top: 50px;
+    font-size: 3.5rem;
+}
+
+.banner .title-banner-2::after{
+  content: '<Great Code/>';
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+/* Mobile  */
+
+
+nav.menu-mobile{
+    display: none;
+}
+
+nav.menu-mobile ul{
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   /* height: 215px; */
+   overflow: hidden;
+   background-color:var(--backgrond);
+   z-index: 1;
+}
+
+
+nav.menu-mobile ul li{
+     padding: 10px 0 10px 0; 
+    border-bottom: 1px solid var(--border-menu-mobile);
+    transition: all .1s;
+    
+   
+}
+
+nav.menu-mobile ul li:first-child{
+    border-top:  1px solid var(--border-menu-mobile);
+
+}
+
+nav.menu-mobile ul li:hover{
+    border-left: 2px solid var(--button);
+}
+
+
+nav.menu-mobile ul li a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-color-menu-mobile);
+    
+}
+
+nav.menu-mobile ul li a:hover{
+    color: var(--text-color);
+ 
+}
+
+
+
+.menu-hamburguer{
+    cursor: pointer;
+}
+
+.content__mobile h2{
+    color: var(--text-color);
+    width: 300px;
+    display: inline-block;
+}
+
+.button__mobile button{
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--button);
+    padding: 5px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+.button__mobile button span{
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+.content__mobile{
+    display: none;
+}
+
+.logo__mobile{
+    display: none;
+
+}
+
+
+
+
+/* Media Queries  */
+
+
+@media screen and (max-width: 900px){
+ 
+
+
+    .header{
+        padding: 30px 2% 20px 2%;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-menu-mobile);
+
+      
+    }
+    
+    nav.menu-desktop{
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .logo__mobile{
+        display: block;
+    }
+
+
+    nav.menu-mobile{
+        display: block;
+    }
+
+    .button-header{
+        display: none;
+    }
+
+    .blur-desktop{
+        display: none;  
+    }
+
+   
+ 
+
+    .content__mobile{
+        display: block;
+        padding-top: 100px;
+    }
+
+    .button__mobile {
+       margin-top: 50px;
+    }
+    
+
+
+    
+    .blur-mobile{
+        position: absolute;
+        bottom: 0;
+        display: block;
+        z-index: -1;
+        width: 100%;
+    }
+    
+    .blur-mobile img{
+      height: 450px;
+    }
+    
+  .rocket-coffee img{
+    width: 100%;
+    
+  }
+
+  .content__mobile h2{
+    color: var(--text-color);
+    width: 470px;
+    display: inline-block;
+    font-size: 3rem;
+}
+
+.banner .title-banner-2::after{
+    content: '<Great Code/>';
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+    font-size: 4rem;
+  }
+  
+  .banner .title-banner-1{
+    font-size: 2.5rem;
+}
+
+  
+    
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 900px){
+  
+
+      .rocket-coffee img{
+        width: 100%;
+        height: 480px;
+        
+      }
+
+      .button__mobile button{
+        color: var(--text-color);
+        background-color: transparent;
+        border: 1px solid var(--button);
+        padding: 5px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    
+    
+  
+    .rocket-coffee{
+        margin-top: 90px;
+      }
+
+   
+
+}
+
+
+@media screen and (max-width: 600px){
+    .banner .title-banner-2::after{
+        content: '<Great Code/>';
+        text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+        font-size: 2.5rem;
+      }
+      
+      .banner .title-banner-1{
+        font-size: 2rem;
+    }
+    
+    .rocket-coffee{
+        margin-top: 100px;
+      }
+
+
+      .content__mobile h2{
+        color: var(--text-color);
+        width: 350px;
+        display: inline-block;
+        font-size: 2rem;
+    }
+    
+      
+      
+
+    }
